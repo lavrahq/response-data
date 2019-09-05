@@ -1,0 +1,12 @@
+- args:
+    name: as_secondary
+    table:
+      name: vehicle_colors
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: secondary_color_id
+        table:
+          name: vehicles
+          schema: public
+  type: create_array_relationship

@@ -1,0 +1,8 @@
+- args:
+    name: title
+    table:
+      name: cases
+      schema: public
+    using:
+      foreign_key_constraint_on: title_id
+  type: create_object_relationship

@@ -1,0 +1,3 @@
+- args:
+    sql: ALTER TABLE "public"."dispositions" ADD COLUMN "short" varchar NOT NULL UNIQUE;
+  type: run_sql

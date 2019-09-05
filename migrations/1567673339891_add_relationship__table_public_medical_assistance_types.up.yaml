@@ -1,0 +1,12 @@
+- args:
+    name: suspect_force_disclosures
+    table:
+      name: medical_assistance_types
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: suspect_medical_assistance_type_id
+        table:
+          name: force_disclosures
+          schema: public
+  type: create_array_relationship

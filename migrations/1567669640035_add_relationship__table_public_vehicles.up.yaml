@@ -1,0 +1,12 @@
+- args:
+    name: cases
+    table:
+      name: vehicles
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: vehicle_id
+        table:
+          name: case_vehicle
+          schema: public
+  type: create_array_relationship

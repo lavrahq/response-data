@@ -1,0 +1,3 @@
+- args:
+    sql: ALTER TABLE "public"."vehicles" DROP COLUMN "plate_state_id" CASCADE
+  type: run_sql

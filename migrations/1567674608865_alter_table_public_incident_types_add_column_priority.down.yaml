@@ -1,0 +1,3 @@
+- args:
+    sql: ALTER TABLE "public"."incident_types" DROP COLUMN "priority";
+  type: run_sql

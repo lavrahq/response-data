@@ -1,0 +1,12 @@
+- args:
+    name: disclosures
+    table:
+      name: injury_types
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: suspect_injury_type_id
+        table:
+          name: force_disclosures
+          schema: public
+  type: create_array_relationship

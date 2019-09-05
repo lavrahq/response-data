@@ -1,0 +1,9 @@
+- args:
+    sql: ALTER TABLE "public"."cases" ALTER COLUMN "number" TYPE int4;
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."cases" ALTER COLUMN "number" DROP NOT NULL;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."cases"."number" IS E''
+  type: run_sql

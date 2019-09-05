@@ -1,0 +1,6 @@
+- args:
+    relationship: properties
+    table:
+      name: property_loss_types
+      schema: public
+  type: drop_relationship

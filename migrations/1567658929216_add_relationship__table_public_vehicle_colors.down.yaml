@@ -1,0 +1,6 @@
+- args:
+    relationship: as_secondary
+    table:
+      name: vehicle_colors
+      schema: public
+  type: drop_relationship

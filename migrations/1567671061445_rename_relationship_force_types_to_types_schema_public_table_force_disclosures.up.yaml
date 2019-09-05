@@ -1,0 +1,7 @@
+- args:
+    name: force_types
+    new_name: types
+    table:
+      name: force_disclosures
+      schema: public
+  type: rename_relationship

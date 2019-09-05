@@ -1,0 +1,12 @@
+- args:
+    name: cases
+    table:
+      name: case_titles
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: title_id
+        table:
+          name: cases
+          schema: public
+  type: create_array_relationship

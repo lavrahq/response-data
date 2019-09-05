@@ -1,0 +1,8 @@
+- args:
+    name: case_status
+    table:
+      name: cases
+      schema: public
+    using:
+      foreign_key_constraint_on: status_id
+  type: create_object_relationship

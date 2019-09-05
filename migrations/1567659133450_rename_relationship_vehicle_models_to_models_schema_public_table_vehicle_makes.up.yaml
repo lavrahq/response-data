@@ -1,0 +1,7 @@
+- args:
+    name: vehicle_models
+    new_name: models
+    table:
+      name: vehicle_makes
+      schema: public
+  type: rename_relationship

@@ -1,0 +1,6 @@
+- args:
+    relationship: type
+    table:
+      name: force_disclosure_force_type
+      schema: public
+  type: drop_relationship

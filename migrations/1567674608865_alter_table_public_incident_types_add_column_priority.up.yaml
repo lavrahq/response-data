@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "public"."incident_types" ADD COLUMN "priority" integer NOT NULL
+      DEFAULT 5;
+  type: run_sql

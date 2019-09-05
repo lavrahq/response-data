@@ -1,0 +1,8 @@
+- args:
+    name: agency
+    table:
+      name: dispositions
+      schema: public
+    using:
+      foreign_key_constraint_on: agency_id
+  type: create_object_relationship

@@ -1,0 +1,3 @@
+- args:
+    sql: ALTER TABLE "public"."servers" DROP COLUMN "map_id";
+  type: run_sql

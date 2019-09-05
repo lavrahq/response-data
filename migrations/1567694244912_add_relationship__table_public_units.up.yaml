@@ -1,0 +1,12 @@
+- args:
+    name: cases
+    table:
+      name: units
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: unit_id
+        table:
+          name: cases
+          schema: public
+  type: create_array_relationship

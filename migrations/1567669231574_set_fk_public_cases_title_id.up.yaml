@@ -1,0 +1,6 @@
+- args:
+    sql: "\n           alter table \"public\".\"cases\"\n           add constraint
+      \"cases_title_id_fkey\" \n           foreign key (\"title_id\") \n           references
+      \"public\".\"case_titles\"\n           (\"id\") on update cascade on delete
+      restrict;\n      "
+  type: run_sql

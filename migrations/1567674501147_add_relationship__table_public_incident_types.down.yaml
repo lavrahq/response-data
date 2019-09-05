@@ -1,0 +1,6 @@
+- args:
+    relationship: agency_type
+    table:
+      name: incident_types
+      schema: public
+  type: drop_relationship

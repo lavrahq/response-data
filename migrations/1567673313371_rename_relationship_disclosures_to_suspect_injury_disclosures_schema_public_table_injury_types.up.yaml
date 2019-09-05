@@ -1,0 +1,7 @@
+- args:
+    name: disclosures
+    new_name: suspect_injury_disclosures
+    table:
+      name: injury_types
+      schema: public
+  type: rename_relationship

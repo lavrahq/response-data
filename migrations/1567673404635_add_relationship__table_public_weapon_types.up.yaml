@@ -1,0 +1,12 @@
+- args:
+    name: force_disclosures
+    table:
+      name: weapon_types
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: weapon_type_id
+        table:
+          name: force_disclosures
+          schema: public
+  type: create_array_relationship

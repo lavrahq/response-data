@@ -1,0 +1,7 @@
+- args:
+    name: map_zones
+    new_name: zones
+    table:
+      name: maps
+      schema: public
+  type: rename_relationship

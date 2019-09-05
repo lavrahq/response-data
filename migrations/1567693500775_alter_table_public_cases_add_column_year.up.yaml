@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "public"."cases" ADD COLUMN "year" integer NOT NULL DEFAULT date_part('year',
+      now());
+  type: run_sql

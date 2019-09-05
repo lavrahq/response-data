@@ -1,0 +1,6 @@
+- args:
+    sql: "\n           alter table \"public\".\"properties\"\n           add constraint
+      \"properties_property_descriptor_id_fkey\" \n           foreign key (\"property_descriptor_id\")
+      \n           references \"public\".\"property_descriptors\"\n           (\"id\")
+      on update cascade on delete restrict;\n      "
+  type: run_sql

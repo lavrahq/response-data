@@ -1,0 +1,6 @@
+- args:
+    relationship: servers
+    table:
+      name: maps
+      schema: public
+  type: drop_relationship

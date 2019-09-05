@@ -1,0 +1,6 @@
+- args:
+    relationship: suspect_medical
+    table:
+      name: force_disclosures
+      schema: public
+  type: drop_relationship

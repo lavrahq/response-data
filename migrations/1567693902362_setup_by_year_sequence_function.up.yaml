@@ -1,0 +1,17 @@
+- args:
+    cascade: false
+    sql: |-
+      -- Setup automatic numbers to reset every calendar year.
+      CREATE OR REPLACE FUNCTION gen_year_number() RETURNS trigger
+         LANGUAGE plpgsql AS
+      $$DECLARE
+         seqname text := TG_TABLE_NAME || '_seq_' || NEW.year;
+      BEGIN
+         IF seqname IS NOT NULL THEN
+            EXECUTE 'CREATE SEQUENCE IF NOT EXISTS ' || seqname;
+            EXECUTE 'SELECT nextval($1)' INTO NEW.number USING seqname::regclass;
+         END IF;
+
+         RETURN NEW;
+      END;$$;
+  type: run_sql

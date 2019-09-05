@@ -1,0 +1,8 @@
+- args:
+    name: vehicle_secondary_color
+    table:
+      name: vehicles
+      schema: public
+    using:
+      foreign_key_constraint_on: color_id
+  type: create_object_relationship

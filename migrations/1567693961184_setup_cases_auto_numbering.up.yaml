@@ -1,0 +1,7 @@
+- args:
+    cascade: false
+    sql: |-
+      -- Setup a trigger to generate the number by year.
+      CREATE TRIGGER number_by_year BEFORE INSERT ON cases FOR EACH ROW
+         EXECUTE PROCEDURE gen_year_number();
+  type: run_sql

@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "public"."servers" ADD COLUMN "metadata" jsonb NOT NULL DEFAULT
+      jsonb_build_object();
+  type: run_sql

@@ -1,0 +1,3 @@
+- args:
+    sql: DROP TABLE "public"."property_measurements"
+  type: run_sql

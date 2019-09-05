@@ -1,0 +1,7 @@
+- args:
+    name: map_streets
+    new_name: streets
+    table:
+      name: maps
+      schema: public
+  type: rename_relationship

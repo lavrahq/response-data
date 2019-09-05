@@ -1,0 +1,13 @@
+- args:
+    sql: CREATE EXTENSION IF NOT EXISTS pgcrypto;
+  type: run_sql
+- args:
+    sql: CREATE TABLE "public"."involvements"("id" uuid NOT NULL DEFAULT gen_random_uuid(),
+      "agency_id" uuid NOT NULL, "name" text NOT NULL, PRIMARY KEY ("id") , FOREIGN
+      KEY ("agency_id") REFERENCES "public"."agencies"("id") ON UPDATE cascade ON
+      DELETE cascade);
+  type: run_sql
+- args:
+    name: involvements
+    schema: public
+  type: add_existing_table_or_view

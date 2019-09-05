@@ -1,0 +1,12 @@
+- args:
+    name: properties
+    table:
+      name: property_loss_types
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: property_loss_type_id
+        table:
+          name: properties
+          schema: public
+  type: create_array_relationship

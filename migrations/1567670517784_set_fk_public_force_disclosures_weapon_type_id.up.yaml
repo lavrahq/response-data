@@ -1,0 +1,6 @@
+- args:
+    sql: "\n           alter table \"public\".\"force_disclosures\"\n           add
+      constraint \"force_disclosures_weapon_type_id_fkey\" \n           foreign key
+      (\"weapon_type_id\") \n           references \"public\".\"weapon_types\"\n           (\"id\")
+      on update cascade on delete restrict;\n      "
+  type: run_sql

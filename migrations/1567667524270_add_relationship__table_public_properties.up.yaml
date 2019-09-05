@@ -1,0 +1,8 @@
+- args:
+    name: loss_type
+    table:
+      name: properties
+      schema: public
+    using:
+      foreign_key_constraint_on: property_loss_type_id
+  type: create_object_relationship

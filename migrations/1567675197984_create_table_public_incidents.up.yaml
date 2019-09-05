@@ -1,0 +1,22 @@
+- args:
+    sql: CREATE EXTENSION IF NOT EXISTS pgcrypto;
+  type: run_sql
+- args:
+    sql: "CREATE TABLE \"public\".\"incidents\"(\"id\" uuid NOT NULL DEFAULT gen_random_uuid(),
+      \"number\" serial NOT NULL, \"dispatcher_id\" uuid, \"unit_id\" uuid, \"timer\"
+      float8, \"priority\" integer, \"location_id\" uuid, \"location_detail\" text,
+      \"received_via\" text NOT NULL, \"incident_type_id\" uuid NOT NULL, \"final_incident_type_id\"
+      uuid NOT NULL, \"disposition_id\" uuid, \"public\" text NOT NULL, \"created_at\"
+      timestamptz NOT NULL DEFAULT now(), \"updated_at\" timestamptz NOT NULL DEFAULT
+      now(), \"finished_at\" timestamptz, \"incident_status_id\" uuid NOT NULL, PRIMARY
+      KEY (\"id\") );\nCREATE OR REPLACE FUNCTION \"public\".\"set_current_timestamp_updated_at\"()\nRETURNS
+      TRIGGER AS $$\nDECLARE\n  _new record;\nBEGIN\n  _new := NEW;\n  _new.\"updated_at\"
+      = NOW();\n  RETURN _new;\nEND;\n$$ LANGUAGE plpgsql;\nCREATE TRIGGER \"set_public_incidents_updated_at\"\nBEFORE
+      UPDATE ON \"public\".\"incidents\"\nFOR EACH ROW\nEXECUTE PROCEDURE \"public\".\"set_current_timestamp_updated_at\"();\nCOMMENT
+      ON TRIGGER \"set_public_incidents_updated_at\" ON \"public\".\"incidents\" \nIS
+      'trigger to set value of column \"updated_at\" to current timestamp on row update';\n"
+  type: run_sql
+- args:
+    name: incidents
+    schema: public
+  type: add_existing_table_or_view

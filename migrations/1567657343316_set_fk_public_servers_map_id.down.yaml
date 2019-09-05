@@ -1,0 +1,4 @@
+- args:
+    sql: "\n          alter table \"public\".\"servers\" drop constraint \"servers_map_id_fkey\"\n
+      \     "
+  type: run_sql

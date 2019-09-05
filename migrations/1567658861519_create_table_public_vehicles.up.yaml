@@ -1,0 +1,16 @@
+- args:
+    sql: CREATE EXTENSION IF NOT EXISTS pgcrypto;
+  type: run_sql
+- args:
+    sql: CREATE TABLE "public"."vehicles"("id" uuid NOT NULL DEFAULT gen_random_uuid(),
+      "color_id" text, "secondary_color_id" text, "model_id" text, "plate" varchar
+      NOT NULL, "reg_number" varchar NOT NULL, PRIMARY KEY ("id") , FOREIGN KEY ("color_id")
+      REFERENCES "public"."vehicle_colors"("id") ON UPDATE cascade ON DELETE set null,
+      FOREIGN KEY ("secondary_color_id") REFERENCES "public"."vehicle_colors"("id")
+      ON UPDATE cascade ON DELETE set null, FOREIGN KEY ("model_id") REFERENCES "public"."vehicle_models"("id")
+      ON UPDATE cascade ON DELETE set null, UNIQUE ("plate"), UNIQUE ("reg_number"));
+  type: run_sql
+- args:
+    name: vehicles
+    schema: public
+  type: add_existing_table_or_view

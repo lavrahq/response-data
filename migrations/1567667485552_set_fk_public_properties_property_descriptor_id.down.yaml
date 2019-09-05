@@ -1,0 +1,4 @@
+- args:
+    sql: "\n          alter table \"public\".\"properties\" drop constraint \"properties_property_descriptor_id_fkey\"\n
+      \     "
+  type: run_sql

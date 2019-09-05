@@ -1,0 +1,6 @@
+- args:
+    sql: ALTER TABLE "public"."vehicles" ADD COLUMN "plate_state_id" uuid
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."vehicles" ALTER COLUMN "plate_state_id" DROP NOT NULL
+  type: run_sql

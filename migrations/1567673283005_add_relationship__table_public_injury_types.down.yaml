@@ -1,0 +1,6 @@
+- args:
+    relationship: disclosures
+    table:
+      name: injury_types
+      schema: public
+  type: drop_relationship

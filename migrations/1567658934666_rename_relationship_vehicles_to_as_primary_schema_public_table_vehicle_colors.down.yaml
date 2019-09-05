@@ -1,0 +1,7 @@
+- args:
+    name: as_primary
+    new_name: vehicles
+    table:
+      name: vehicle_colors
+      schema: public
+  type: rename_relationship

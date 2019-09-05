@@ -1,0 +1,8 @@
+- args:
+    name: vehicle_make
+    table:
+      name: vehicle_models
+      schema: public
+    using:
+      foreign_key_constraint_on: vehicle_make_id
+  type: create_object_relationship

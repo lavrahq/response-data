@@ -1,0 +1,8 @@
+- args:
+    name: style
+    table:
+      name: vehicles
+      schema: public
+    using:
+      foreign_key_constraint_on: style_id
+  type: create_object_relationship

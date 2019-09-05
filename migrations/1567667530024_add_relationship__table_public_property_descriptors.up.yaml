@@ -1,0 +1,12 @@
+- args:
+    name: properties
+    table:
+      name: property_descriptors
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: property_descriptor_id
+        table:
+          name: properties
+          schema: public
+  type: create_array_relationship

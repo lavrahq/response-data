@@ -1,0 +1,3 @@
+- args:
+    sql: ALTER TABLE "public"."cases" DROP COLUMN "started_at";
+  type: run_sql

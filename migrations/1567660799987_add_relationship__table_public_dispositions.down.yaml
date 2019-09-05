@@ -1,0 +1,6 @@
+- args:
+    relationship: agency
+    table:
+      name: dispositions
+      schema: public
+  type: drop_relationship

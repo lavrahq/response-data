@@ -1,0 +1,8 @@
+- args:
+    name: unit_injury
+    table:
+      name: force_disclosures
+      schema: public
+    using:
+      foreign_key_constraint_on: unit_injury_type_id
+  type: create_object_relationship

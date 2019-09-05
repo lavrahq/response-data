@@ -1,0 +1,8 @@
+- args:
+    name: area
+    table:
+      name: force_area_force_disclosure
+      schema: public
+    using:
+      foreign_key_constraint_on: force_area_id
+  type: create_object_relationship

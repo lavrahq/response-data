@@ -1,0 +1,6 @@
+- args:
+    sql: "\n           alter table \"public\".\"servers\"\n           add constraint
+      \"servers_map_id_fkey\" \n           foreign key (\"map_id\") \n           references
+      \"public\".\"maps\"\n           (\"id\") on update cascade on delete cascade;\n
+      \     "
+  type: run_sql

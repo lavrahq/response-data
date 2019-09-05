@@ -1,0 +1,6 @@
+- args:
+    relationship: weapon_type
+    table:
+      name: force_disclosures
+      schema: public
+  type: drop_relationship

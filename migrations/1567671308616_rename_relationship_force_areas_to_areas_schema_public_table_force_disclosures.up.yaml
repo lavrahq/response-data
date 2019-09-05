@@ -1,0 +1,7 @@
+- args:
+    name: force_areas
+    new_name: areas
+    table:
+      name: force_disclosures
+      schema: public
+  type: rename_relationship

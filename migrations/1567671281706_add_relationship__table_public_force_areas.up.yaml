@@ -1,0 +1,12 @@
+- args:
+    name: force_disclosures
+    table:
+      name: force_areas
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: force_area_id
+        table:
+          name: force_area_force_disclosure
+          schema: public
+  type: create_array_relationship

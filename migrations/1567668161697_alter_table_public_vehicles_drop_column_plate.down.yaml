@@ -1,0 +1,10 @@
+- args:
+    sql: ALTER TABLE "public"."vehicles" ADD COLUMN "plate" varchar
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."vehicles" ALTER COLUMN "plate" DROP NOT NULL
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."vehicles" ADD CONSTRAINT vehicles_plate_key UNIQUE
+      (plate)
+  type: run_sql

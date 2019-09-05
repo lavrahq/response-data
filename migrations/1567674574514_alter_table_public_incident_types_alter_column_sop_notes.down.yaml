@@ -1,0 +1,7 @@
+- args:
+    sql: COMMENT ON COLUMN "public"."incident_types"."sop_notes" IS E'null'
+  type: run_sql
+- args:
+    sql: alter table "public"."incident_types" rename column "dispatching_sop" to
+      "sop_notes";
+  type: run_sql

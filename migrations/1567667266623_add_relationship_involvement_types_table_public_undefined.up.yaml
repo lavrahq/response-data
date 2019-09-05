@@ -1,0 +1,12 @@
+- args:
+    name: involvement_types
+    table:
+      name: agencies
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: agency_id
+        table:
+          name: involvement_types
+          schema: public
+  type: create_array_relationship

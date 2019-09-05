@@ -1,0 +1,4 @@
+- args:
+    sql: "\n          alter table \"public\".\"incident_types\" drop constraint \"incident_types_agency_type_id_fkey\"\n
+      \     "
+  type: run_sql

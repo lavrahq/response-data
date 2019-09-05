@@ -1,0 +1,6 @@
+- args:
+    sql: ALTER TABLE "public"."cases" ALTER COLUMN "type_id" SET NOT NULL;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."cases"."type_id" IS E'null'
+  type: run_sql

@@ -1,0 +1,6 @@
+- args:
+    relationship: descriptor
+    table:
+      name: properties
+      schema: public
+  type: drop_relationship

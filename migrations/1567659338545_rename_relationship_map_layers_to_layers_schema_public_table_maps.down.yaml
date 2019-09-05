@@ -1,0 +1,7 @@
+- args:
+    name: layers
+    new_name: map_layers
+    table:
+      name: maps
+      schema: public
+  type: rename_relationship

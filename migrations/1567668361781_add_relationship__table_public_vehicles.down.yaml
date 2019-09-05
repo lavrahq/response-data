@@ -1,0 +1,6 @@
+- args:
+    relationship: registrations
+    table:
+      name: vehicles
+      schema: public
+  type: drop_relationship

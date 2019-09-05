@@ -1,0 +1,7 @@
+- args:
+    name: status
+    new_name: case_status
+    table:
+      name: cases
+      schema: public
+  type: rename_relationship

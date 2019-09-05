@@ -1,0 +1,6 @@
+- args:
+    relationship: notes
+    table:
+      name: vehicles
+      schema: public
+  type: drop_relationship

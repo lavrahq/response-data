@@ -1,0 +1,3 @@
+- args:
+    sql: DROP TABLE "public"."force_disclosure_force_type"
+  type: run_sql

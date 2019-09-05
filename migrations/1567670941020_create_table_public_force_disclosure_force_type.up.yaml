@@ -1,0 +1,15 @@
+- args:
+    sql: CREATE EXTENSION IF NOT EXISTS pgcrypto;
+  type: run_sql
+- args:
+    sql: CREATE TABLE "public"."force_disclosure_force_type"("id" uuid NOT NULL DEFAULT
+      gen_random_uuid(), "force_disclosure_id" uuid NOT NULL, "force_type_id" uuid
+      NOT NULL, "effective" boolean NOT NULL DEFAULT false, PRIMARY KEY ("id") , FOREIGN
+      KEY ("force_disclosure_id") REFERENCES "public"."force_disclosures"("id") ON
+      UPDATE cascade ON DELETE cascade, FOREIGN KEY ("force_type_id") REFERENCES "public"."force_types"("id")
+      ON UPDATE cascade ON DELETE cascade, UNIQUE ("force_disclosure_id", "force_type_id"));
+  type: run_sql
+- args:
+    name: force_disclosure_force_type
+    schema: public
+  type: add_existing_table_or_view

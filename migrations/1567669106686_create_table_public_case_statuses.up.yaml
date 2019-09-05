@@ -1,0 +1,14 @@
+- args:
+    sql: CREATE EXTENSION IF NOT EXISTS pgcrypto;
+  type: run_sql
+- args:
+    sql: CREATE TABLE "public"."case_statuses"("id" uuid NOT NULL DEFAULT gen_random_uuid(),
+      "name" text NOT NULL, "color" varchar, "is_approved" boolean NOT NULL DEFAULT
+      false, "is_new" boolean NOT NULL DEFAULT false, "is_progressing" boolean NOT
+      NULL DEFAULT false, "is_rejected" boolean NOT NULL DEFAULT false, PRIMARY KEY
+      ("id") );
+  type: run_sql
+- args:
+    name: case_statuses
+    schema: public
+  type: add_existing_table_or_view

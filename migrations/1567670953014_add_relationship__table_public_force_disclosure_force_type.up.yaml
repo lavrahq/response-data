@@ -1,0 +1,8 @@
+- args:
+    name: disclosure
+    table:
+      name: force_disclosure_force_type
+      schema: public
+    using:
+      foreign_key_constraint_on: force_disclosure_id
+  type: create_object_relationship
