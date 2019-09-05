@@ -1,0 +1,6 @@
+- args:
+    relationship: bolos
+    table:
+      name: vehicles
+      schema: public
+  type: drop_relationship

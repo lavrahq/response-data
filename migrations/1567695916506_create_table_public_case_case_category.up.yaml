@@ -1,0 +1,11 @@
+- args:
+    sql: CREATE TABLE "public"."case_case_category"("case_id" uuid NOT NULL, "case_category_id"
+      uuid NOT NULL, PRIMARY KEY ("case_id","case_category_id") , FOREIGN KEY ("case_id")
+      REFERENCES "public"."cases"("id") ON UPDATE cascade ON DELETE restrict, FOREIGN
+      KEY ("case_category_id") REFERENCES "public"."case_categories"("id") ON UPDATE
+      cascade ON DELETE restrict, UNIQUE ("case_id", "case_category_id"));
+  type: run_sql
+- args:
+    name: case_case_category
+    schema: public
+  type: add_existing_table_or_view

@@ -1,0 +1,6 @@
+- args:
+    relationship: cases
+    table:
+      name: people
+      schema: public
+  type: drop_relationship

@@ -1,0 +1,8 @@
+- args:
+    sql: CREATE TABLE "public"."abbreviations"("id" varchar NOT NULL, "tooltip" text
+      NOT NULL, "notes" text, PRIMARY KEY ("id") );
+  type: run_sql
+- args:
+    name: abbreviations
+    schema: public
+  type: add_existing_table_or_view

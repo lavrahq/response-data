@@ -1,0 +1,8 @@
+- args:
+    name: case_category
+    table:
+      name: case_case_category
+      schema: public
+    using:
+      foreign_key_constraint_on: case_category_id
+  type: create_object_relationship

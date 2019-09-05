@@ -1,0 +1,8 @@
+- args:
+    name: vehicle
+    table:
+      name: bolos
+      schema: public
+    using:
+      foreign_key_constraint_on: vehicle_id
+  type: create_object_relationship

@@ -1,0 +1,9 @@
+- args:
+    sql: CREATE TABLE "public"."case_property"("case_id" uuid NOT NULL, "property_id"
+      uuid NOT NULL, "person_id" uuid NOT NULL, PRIMARY KEY ("case_id","property_id","person_id")
+      , UNIQUE ("case_id", "property_id", "person_id"));
+  type: run_sql
+- args:
+    name: case_property
+    schema: public
+  type: add_existing_table_or_view

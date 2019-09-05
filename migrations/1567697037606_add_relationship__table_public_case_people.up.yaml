@@ -1,0 +1,8 @@
+- args:
+    name: involvement
+    table:
+      name: case_people
+      schema: public
+    using:
+      foreign_key_constraint_on: involvement_id
+  type: create_object_relationship

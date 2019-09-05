@@ -1,0 +1,6 @@
+- args:
+    relationship: bolos
+    table:
+      name: units
+      schema: public
+  type: drop_relationship

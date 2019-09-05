@@ -1,0 +1,27 @@
+- args:
+    sql: CREATE EXTENSION IF NOT EXISTS pgcrypto;
+  type: run_sql
+- args:
+    sql: "CREATE TABLE \"public\".\"bolos\"(\"id\" uuid NOT NULL DEFAULT gen_random_uuid(),
+      \"person_id\" uuid, \"vehicle_id\" uuid, \"case_id\" uuid, \"incident_id\" uuid,
+      \"unit_id\" uuid NOT NULL, \"dispatcher_id\" uuid, \"bolo_type_id\" uuid NOT
+      NULL, \"title\" text NOT NULL, \"description\" text NOT NULL, \"created_at\"
+      timestamptz NOT NULL DEFAULT now(), \"updated_at\" timestamptz NOT NULL DEFAULT
+      now(), PRIMARY KEY (\"id\") , FOREIGN KEY (\"person_id\") REFERENCES \"public\".\"people\"(\"id\")
+      ON UPDATE cascade ON DELETE cascade, FOREIGN KEY (\"vehicle_id\") REFERENCES
+      \"public\".\"vehicles\"(\"id\") ON UPDATE cascade ON DELETE cascade, FOREIGN
+      KEY (\"case_id\") REFERENCES \"public\".\"cases\"(\"id\") ON UPDATE cascade
+      ON DELETE cascade, FOREIGN KEY (\"incident_id\") REFERENCES \"public\".\"incidents\"(\"id\")
+      ON UPDATE cascade ON DELETE cascade, FOREIGN KEY (\"unit_id\") REFERENCES \"public\".\"units\"(\"id\")
+      ON UPDATE cascade ON DELETE set null, FOREIGN KEY (\"id\") REFERENCES \"public\".\"bolo_types\"(\"id\")
+      ON UPDATE cascade ON DELETE restrict);\nCREATE OR REPLACE FUNCTION \"public\".\"set_current_timestamp_updated_at\"()\nRETURNS
+      TRIGGER AS $$\nDECLARE\n  _new record;\nBEGIN\n  _new := NEW;\n  _new.\"updated_at\"
+      = NOW();\n  RETURN _new;\nEND;\n$$ LANGUAGE plpgsql;\nCREATE TRIGGER \"set_public_bolos_updated_at\"\nBEFORE
+      UPDATE ON \"public\".\"bolos\"\nFOR EACH ROW\nEXECUTE PROCEDURE \"public\".\"set_current_timestamp_updated_at\"();\nCOMMENT
+      ON TRIGGER \"set_public_bolos_updated_at\" ON \"public\".\"bolos\" \nIS 'trigger
+      to set value of column \"updated_at\" to current timestamp on row update';\n"
+  type: run_sql
+- args:
+    name: bolos
+    schema: public
+  type: add_existing_table_or_view

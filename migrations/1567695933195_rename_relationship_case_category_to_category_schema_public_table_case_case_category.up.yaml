@@ -1,0 +1,7 @@
+- args:
+    name: case_category
+    new_name: category
+    table:
+      name: case_case_category
+      schema: public
+  type: rename_relationship

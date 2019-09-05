@@ -1,0 +1,8 @@
+- args:
+    name: unit
+    table:
+      name: bolos
+      schema: public
+    using:
+      foreign_key_constraint_on: unit_id
+  type: create_object_relationship

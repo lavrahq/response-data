@@ -1,0 +1,12 @@
+- args:
+    name: case_people
+    table:
+      name: involvement_types
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: involvement_type_id
+        table:
+          name: case_people
+          schema: public
+  type: create_array_relationship
