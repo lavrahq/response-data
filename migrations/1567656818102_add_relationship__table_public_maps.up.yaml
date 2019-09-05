@@ -1,0 +1,12 @@
+- args:
+    name: map_layers
+    table:
+      name: maps
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: map_id
+        table:
+          name: map_layers
+          schema: public
+  type: create_array_relationship

@@ -1,3 +1,0 @@
-- args:
-    sql: DROP TABLE "public"."map_street_bridge"
-  type: run_sql

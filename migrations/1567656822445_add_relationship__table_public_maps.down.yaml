@@ -1,6 +1,6 @@
 - args:
-    relationship: crosses
+    relationship: map_streets
     table:
-      name: map_streets
+      name: maps
       schema: public
   type: drop_relationship

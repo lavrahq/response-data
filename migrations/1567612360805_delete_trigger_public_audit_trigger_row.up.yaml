@@ -1,3 +1,0 @@
-- args:
-    sql: DROP TRIGGER "audit_trigger_row" ON "public"."users";
-  type: run_sql

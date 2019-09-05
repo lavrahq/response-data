@@ -1,0 +1,6 @@
+- args:
+    relationship: map_layers
+    table:
+      name: maps
+      schema: public
+  type: drop_relationship

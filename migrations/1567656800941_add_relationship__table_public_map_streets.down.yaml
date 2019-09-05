@@ -1,6 +1,6 @@
 - args:
-    relationship: map_street
+    relationship: map
     table:
-      name: map_street_bridge
+      name: map_streets
       schema: public
   type: drop_relationship

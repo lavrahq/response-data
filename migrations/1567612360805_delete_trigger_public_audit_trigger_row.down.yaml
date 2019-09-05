@@ -1,6 +1,0 @@
-- args:
-    sql: |-
-      CREATE TRIGGER "audit_trigger_row"
-      AFTER DELETE ON "public"."users"
-      FOR EACH ROW EXECUTE PROCEDURE audit.if_modified_func('false');
-  type: run_sql
