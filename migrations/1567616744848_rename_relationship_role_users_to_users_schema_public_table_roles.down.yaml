@@ -1,0 +1,7 @@
+- args:
+    name: users
+    new_name: role_users
+    table:
+      name: roles
+      schema: public
+  type: rename_relationship

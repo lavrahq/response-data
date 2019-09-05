@@ -1,0 +1,7 @@
+- args:
+    cascade: false
+    sql: |2-
+
+      -- Audit the `users` table, do not log `password`
+      select audit.audit_table('users', true, false, '{password}');
+  type: run_sql

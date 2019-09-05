@@ -1,0 +1,9 @@
+- args:
+    cascade: false
+    sql: |-
+      --
+      -- Enable trigger to call set_password_hashed() before INSERT or UPDATE
+      --
+      DROP TRIGGER IF EXISTS add_default_roles_for_user ON users;
+      CREATE TRIGGER add_default_roles_for_user AFTER INSERT ON users FOR EACH ROW EXECUTE PROCEDURE add_default_roles();
+  type: run_sql

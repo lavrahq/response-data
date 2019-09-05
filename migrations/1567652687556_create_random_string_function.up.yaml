@@ -1,0 +1,7 @@
+- args:
+    cascade: false
+    sql: "CREATE OR REPLACE FUNCTION random_string(INTEGER)\nRETURNS TEXT\nLANGUAGE
+      SQL\nAS $$ \n  select upper(\n    substring(\n      (SELECT string_agg(md5(random()::TEXT),
+      '')\n       FROM generate_series(\n           1,\n           CEIL($1 / 32.)::integer)
+      \n       ), 1, $1) );\n$$;"
+  type: run_sql

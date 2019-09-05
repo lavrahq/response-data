@@ -1,0 +1,6 @@
+- args:
+    cascade: false
+    sql: "\nINSERT INTO public.roles (\"key\", \"title\", \"description\") \n    VALUES
+      ('user', 'Default User', 'This role provides the basics for all Response users.
+      Every user should have this role.');"
+  type: run_sql

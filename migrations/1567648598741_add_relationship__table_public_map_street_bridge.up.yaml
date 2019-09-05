@@ -1,0 +1,8 @@
+- args:
+    name: map_street
+    table:
+      name: map_street_bridge
+      schema: public
+    using:
+      foreign_key_constraint_on: map_cross_street_id
+  type: create_object_relationship

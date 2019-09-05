@@ -1,0 +1,30 @@
+- args:
+    cascade: false
+    sql: |-
+      --
+      -- Intializes the default roles for a user.
+      --
+      CREATE OR REPLACE FUNCTION add_default_roles ()
+        RETURNS TRIGGER
+        AS $BODY$
+      DECLARE
+        role_id UUID;
+      BEGIN
+        SELECT
+          ROLE.id INTO role_id
+        FROM
+          public.roles ROLE
+        WHERE
+          KEY = 'user'
+        LIMIT 1;
+
+        IF TG_OP = 'INSERT' THEN
+          INSERT INTO public.role_user ("role_id", "user_id")
+            VALUES(role_id, NEW.id);
+          RETURN NEW;
+        END IF;
+        RETURN NULL;
+      END;
+      $BODY$
+      LANGUAGE 'plpgsql';
+  type: run_sql

@@ -1,0 +1,19 @@
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - id
+      - plate
+      - expired_at
+      filter:
+        _or:
+        - expired_at:
+            _is_null: true
+        - expired_at:
+            _gt: now()
+      limit: null
+    role: server
+    table:
+      name: tracked_vehicles
+      schema: public
+  type: create_select_permission

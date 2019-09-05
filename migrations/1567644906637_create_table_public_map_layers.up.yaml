@@ -1,0 +1,13 @@
+- args:
+    sql: CREATE EXTENSION IF NOT EXISTS pgcrypto;
+  type: run_sql
+- args:
+    sql: CREATE TABLE "public"."map_layers"("id" uuid NOT NULL DEFAULT gen_random_uuid(),
+      "map_id" uuid NOT NULL, "name" text NOT NULL, "url" text NOT NULL, PRIMARY KEY
+      ("id") , FOREIGN KEY ("map_id") REFERENCES "public"."maps"("id") ON UPDATE cascade
+      ON DELETE cascade);
+  type: run_sql
+- args:
+    name: map_layers
+    schema: public
+  type: add_existing_table_or_view

@@ -1,0 +1,14 @@
+- args:
+    sql: CREATE EXTENSION IF NOT EXISTS pgcrypto;
+  type: run_sql
+- args:
+    sql: CREATE TABLE "public"."role_user"("id" uuid NOT NULL DEFAULT gen_random_uuid(),
+      "role_id" uuid NOT NULL, "user_id" uuid NOT NULL, PRIMARY KEY ("id") , FOREIGN
+      KEY ("role_id") REFERENCES "public"."roles"("id") ON UPDATE cascade ON DELETE
+      cascade, FOREIGN KEY ("user_id") REFERENCES "public"."users"("id") ON UPDATE
+      cascade ON DELETE cascade, UNIQUE ("role_id", "user_id"));
+  type: run_sql
+- args:
+    name: role_user
+    schema: public
+  type: add_existing_table_or_view

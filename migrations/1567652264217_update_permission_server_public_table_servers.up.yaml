@@ -1,0 +1,16 @@
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - id
+      - name
+      - user_id
+      filter:
+        id:
+          _eq: X-Hasura-Server-Id
+      limit: null
+    role: server
+    table:
+      name: servers
+      schema: public
+  type: create_select_permission

@@ -1,0 +1,6 @@
+- args:
+    sql: ALTER TABLE "public"."maps" ALTER COLUMN "transform_d" TYPE float8;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."maps"."transform_d" IS E''
+  type: run_sql

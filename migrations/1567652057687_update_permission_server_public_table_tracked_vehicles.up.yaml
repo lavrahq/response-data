@@ -1,0 +1,19 @@
+- args:
+    permission:
+      columns:
+      - plate
+      filter:
+        _or:
+        - expired_at:
+            _is_null: true
+        - expired_at:
+            _gt: now()
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: server
+    table:
+      name: tracked_vehicles
+      schema: public
+  type: create_update_permission

@@ -1,0 +1,5 @@
+- args:
+    cascade: false
+    sql: |
+      CREATE EXTENSION postgis;
+  type: run_sql

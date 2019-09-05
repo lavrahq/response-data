@@ -1,0 +1,12 @@
+- args:
+    name: crosses
+    table:
+      name: map_streets
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: map_cross_street_id
+        table:
+          name: map_street_bridge
+          schema: public
+  type: create_array_relationship

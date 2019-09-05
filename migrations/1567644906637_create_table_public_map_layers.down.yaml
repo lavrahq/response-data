@@ -1,0 +1,3 @@
+- args:
+    sql: DROP TABLE "public"."map_layers"
+  type: run_sql

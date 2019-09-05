@@ -1,0 +1,11 @@
+- args:
+    sql: CREATE TABLE "public"."map_street_bridge"("map_street_id" text NOT NULL,
+      "map_cross_street_id" text NOT NULL, PRIMARY KEY ("map_street_id","map_cross_street_id")
+      , FOREIGN KEY ("map_street_id") REFERENCES "public"."map_streets"("id") ON UPDATE
+      cascade ON DELETE cascade, FOREIGN KEY ("map_cross_street_id") REFERENCES "public"."map_streets"("id")
+      ON UPDATE cascade ON DELETE cascade, UNIQUE ("map_street_id", "map_cross_street_id"));
+  type: run_sql
+- args:
+    name: map_street_bridge
+    schema: public
+  type: add_existing_table_or_view
