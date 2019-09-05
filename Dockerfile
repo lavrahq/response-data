@@ -8,7 +8,7 @@ LABEL   org.label-schema.vendor = "Lavra"
 LABEL   org.label-schema.schema-version = "1.0"
 LABEL   io.lavra.stack.supported = "true"
 
-COPY    migrations /hasura-migrations
+COPY    ./migrations /hasura-migrations
 
 ENV     HASURA_GRAPHQL_SERVER_PORT=8080 \
         HASURA_GRAPHQL_SERVER_HOST="*" \
