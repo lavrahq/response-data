@@ -1,0 +1,6 @@
+- args:
+    relationship: locations_as_street
+    table:
+      name: map_streets
+      schema: public
+  type: drop_relationship

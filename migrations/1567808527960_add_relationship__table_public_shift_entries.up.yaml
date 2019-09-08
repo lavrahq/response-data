@@ -1,0 +1,8 @@
+- args:
+    name: type
+    table:
+      name: shift_entries
+      schema: public
+    using:
+      foreign_key_constraint_on: shift_entry_type_id
+  type: create_object_relationship

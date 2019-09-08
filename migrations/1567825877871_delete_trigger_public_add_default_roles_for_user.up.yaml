@@ -1,0 +1,3 @@
+- args:
+    sql: DROP TRIGGER "add_default_roles_for_user" ON "public"."users";
+  type: run_sql

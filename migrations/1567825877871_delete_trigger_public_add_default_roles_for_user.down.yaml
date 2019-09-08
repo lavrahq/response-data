@@ -1,0 +1,6 @@
+- args:
+    sql: |-
+      CREATE TRIGGER "add_default_roles_for_user"
+      AFTER INSERT ON "public"."users"
+      FOR EACH ROW EXECUTE PROCEDURE add_default_roles();
+  type: run_sql

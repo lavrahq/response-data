@@ -1,0 +1,3 @@
+- args:
+    sql: ALTER TABLE "public"."users" DROP COLUMN "first_name" CASCADE
+  type: run_sql

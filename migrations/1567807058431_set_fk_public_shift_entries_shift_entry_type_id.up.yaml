@@ -1,0 +1,6 @@
+- args:
+    sql: "\n           alter table \"public\".\"shift_entries\"\n           add constraint
+      \"shift_entries_shift_entry_type_id_fkey\" \n           foreign key (\"shift_entry_type_id\")
+      \n           references \"public\".\"shift_entry_types\"\n           (\"id\")
+      on update cascade on delete restrict;\n      "
+  type: run_sql

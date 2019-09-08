@@ -1,0 +1,22 @@
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - assigned
+      - cleared
+      - created_at
+      - en_route
+      - holding
+      - id
+      - name
+      - on_scene
+      - reassigned
+      - short
+      - updated_at
+      filter: {}
+      limit: null
+    role: anonymous
+    table:
+      name: incident_statuses
+      schema: public
+  type: create_select_permission

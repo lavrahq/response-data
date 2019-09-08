@@ -1,0 +1,15 @@
+- args:
+    sql: CREATE EXTENSION IF NOT EXISTS pgcrypto;
+  type: run_sql
+- args:
+    sql: CREATE TABLE "public"."shift_unit"("shift_id" uuid NOT NULL, "unit_id" uuid
+      NOT NULL, "is_dispatcher" boolean NOT NULL DEFAULT false, "id" uuid NOT NULL
+      DEFAULT gen_random_uuid(), PRIMARY KEY ("id") , FOREIGN KEY ("shift_id") REFERENCES
+      "public"."shifts"("id") ON UPDATE cascade ON DELETE cascade, FOREIGN KEY ("unit_id")
+      REFERENCES "public"."units"("id") ON UPDATE cascade ON DELETE cascade, UNIQUE
+      ("shift_id"), UNIQUE ("unit_id"), UNIQUE ("is_dispatcher"));
+  type: run_sql
+- args:
+    name: shift_unit
+    schema: public
+  type: add_existing_table_or_view

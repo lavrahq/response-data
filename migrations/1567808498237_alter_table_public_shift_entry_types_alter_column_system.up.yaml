@@ -1,0 +1,9 @@
+- args:
+    sql: ALTER TABLE "public"."shift_entry_types" ALTER COLUMN "system" TYPE bool;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."shift_entry_types"."system" IS E''
+  type: run_sql
+- args:
+    sql: alter table "public"."shift_entry_types" rename column "system" to "is_system";
+  type: run_sql

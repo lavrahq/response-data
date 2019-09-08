@@ -1,0 +1,6 @@
+- args:
+    sql: "\n           alter table \"public\".\"users\"\n           add constraint
+      \"users_role_id_fkey\" \n           foreign key (\"role_id\") \n           references
+      \"public\".\"roles\"\n           (\"id\") on update cascade on delete restrict;\n
+      \     "
+  type: run_sql

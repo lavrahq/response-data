@@ -1,0 +1,12 @@
+- args:
+    name: locations_as_street
+    table:
+      name: map_streets
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: street_id
+        table:
+          name: locations
+          schema: public
+  type: create_array_relationship

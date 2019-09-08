@@ -1,0 +1,21 @@
+- args:
+    sql: CREATE EXTENSION IF NOT EXISTS pgcrypto;
+  type: run_sql
+- args:
+    sql: "CREATE TABLE \"public\".\"announcements\"(\"id\" uuid NOT NULL DEFAULT gen_random_uuid(),
+      \"agency_id\" uuid, \"announced_at\" timestamptz NOT NULL DEFAULT now(), \"expired_at\"
+      timestamptz, \"title\" text NOT NULL, \"content\" text NOT NULL, \"created_at\"
+      timestamptz NOT NULL DEFAULT now(), \"updated_at\" timestamptz NOT NULL DEFAULT
+      now(), PRIMARY KEY (\"id\") , FOREIGN KEY (\"agency_id\") REFERENCES \"public\".\"agencies\"(\"id\")
+      ON UPDATE cascade ON DELETE set null);\nCREATE OR REPLACE FUNCTION \"public\".\"set_current_timestamp_updated_at\"()\nRETURNS
+      TRIGGER AS $$\nDECLARE\n  _new record;\nBEGIN\n  _new := NEW;\n  _new.\"updated_at\"
+      = NOW();\n  RETURN _new;\nEND;\n$$ LANGUAGE plpgsql;\nCREATE TRIGGER \"set_public_announcements_updated_at\"\nBEFORE
+      UPDATE ON \"public\".\"announcements\"\nFOR EACH ROW\nEXECUTE PROCEDURE \"public\".\"set_current_timestamp_updated_at\"();\nCOMMENT
+      ON TRIGGER \"set_public_announcements_updated_at\" ON \"public\".\"announcements\"
+      \nIS 'trigger to set value of column \"updated_at\" to current timestamp on
+      row update';\n"
+  type: run_sql
+- args:
+    name: announcements
+    schema: public
+  type: add_existing_table_or_view

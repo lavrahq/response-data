@@ -1,0 +1,3 @@
+- args:
+    sql: COMMENT ON COLUMN "public"."incidents"."final_incident_type_id" IS E''
+  type: run_sql

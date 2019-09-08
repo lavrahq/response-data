@@ -1,0 +1,12 @@
+- args:
+    cascade: false
+    sql: "CREATE OR REPLACE FUNCTION public.current_shift()\n RETURNS SETOF shifts\n
+      LANGUAGE sql\n STABLE\nAS $function$\n\tSELECT\n    \t*\n    FROM\n    \tpublic.shifts\n
+      \   WHERE\n    \t(\n    \t\tshifts.started_at < now()\n    \t\t\tAND\n    \t\t(\n
+      \   \t\t\t(shifts.ended_at IS NULL)\n    \t\t\t\tOR\n    \t\t\t(shifts.ended_at
+      > now())\n    \t\t)\n    \t)\n    LIMIT 1;\n$function$\n"
+  type: run_sql
+- args:
+    name: current_shift
+    schema: public
+  type: track_function

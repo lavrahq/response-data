@@ -1,0 +1,18 @@
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - building
+      - created_at
+      - cross_street_id
+      - id
+      - name
+      - street_id
+      - updated_at
+      filter: {}
+      limit: null
+    role: anonymous
+    table:
+      name: locations
+      schema: public
+  type: create_select_permission

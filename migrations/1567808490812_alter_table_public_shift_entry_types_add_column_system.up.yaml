@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "public"."shift_entry_types" ADD COLUMN "system" boolean NULL
+      DEFAULT false;
+  type: run_sql

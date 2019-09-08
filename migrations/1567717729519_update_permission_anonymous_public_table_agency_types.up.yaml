@@ -1,0 +1,14 @@
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - id
+      - short
+      - name
+      filter: {}
+      limit: null
+    role: anonymous
+    table:
+      name: agency_types
+      schema: public
+  type: create_select_permission

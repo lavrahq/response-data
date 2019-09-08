@@ -1,0 +1,6 @@
+- args:
+    relationship: unit
+    table:
+      name: shift_entries
+      schema: public
+  type: drop_relationship

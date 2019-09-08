@@ -1,0 +1,28 @@
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - announced_at
+      - created_at
+      - expired_at
+      - id
+      - is_public
+      - public
+      - title
+      - updated_at
+      filter:
+        _and:
+        - announced_at:
+            _lte: now()
+        - expired_at:
+            _gt: now()
+        - is_public:
+            _eq: true
+        - public:
+            _is_null: false
+      limit: null
+    role: anonymous
+    table:
+      name: announcements
+      schema: public
+  type: create_select_permission

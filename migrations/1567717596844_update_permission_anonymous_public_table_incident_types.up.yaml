@@ -1,0 +1,21 @@
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - id
+      - incident_classification_id
+      - code
+      - name
+      - auto_note
+      - dispatching_sop
+      - timer
+      - agency_type_id
+      - responding_sop
+      - priority
+      filter: {}
+      limit: null
+    role: anonymous
+    table:
+      name: incident_types
+      schema: public
+  type: create_select_permission

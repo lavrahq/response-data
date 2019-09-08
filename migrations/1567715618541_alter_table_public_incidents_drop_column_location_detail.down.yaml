@@ -1,0 +1,7 @@
+- args:
+    sql: ALTER TABLE "public"."incidents" ADD COLUMN "location_detail" text
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."incidents" ALTER COLUMN "location_detail" DROP NOT
+      NULL
+  type: run_sql

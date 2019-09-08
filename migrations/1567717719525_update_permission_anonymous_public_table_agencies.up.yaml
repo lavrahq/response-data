@@ -1,0 +1,17 @@
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - agecy_type_id
+      - created_at
+      - description
+      - id
+      - name
+      - updated_at
+      filter: {}
+      limit: null
+    role: anonymous
+    table:
+      name: agencies
+      schema: public
+  type: create_select_permission

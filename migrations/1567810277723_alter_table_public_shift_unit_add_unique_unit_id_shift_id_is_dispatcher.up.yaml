@@ -1,0 +1,7 @@
+- args:
+    sql: alter table "public"."shift_unit" drop constraint "shift_unit_unit_id_key";
+  type: run_sql
+- args:
+    sql: alter table "public"."shift_unit" add constraint "shift_unit_unit_id_shift_id_is_dispatcher_key"
+      unique ("unit_id", "shift_id", "is_dispatcher");
+  type: run_sql

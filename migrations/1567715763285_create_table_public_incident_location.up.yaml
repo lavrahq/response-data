@@ -1,0 +1,12 @@
+- args:
+    sql: CREATE TABLE "public"."incident_location"("incident_id" uuid NOT NULL, "location_id"
+      uuid NOT NULL, "incident_location_type_id" uuid, "comment" text, PRIMARY KEY
+      ("incident_id","location_id") , FOREIGN KEY ("incident_id") REFERENCES "public"."incidents"("id")
+      ON UPDATE cascade ON DELETE restrict, FOREIGN KEY ("location_id") REFERENCES
+      "public"."locations"("id") ON UPDATE cascade ON DELETE restrict, UNIQUE ("incident_id",
+      "location_id"));
+  type: run_sql
+- args:
+    name: incident_location
+    schema: public
+  type: add_existing_table_or_view

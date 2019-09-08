@@ -1,0 +1,7 @@
+- args:
+    name: unit
+    new_name: dispatcher
+    table:
+      name: shift_entries
+      schema: public
+  type: rename_relationship

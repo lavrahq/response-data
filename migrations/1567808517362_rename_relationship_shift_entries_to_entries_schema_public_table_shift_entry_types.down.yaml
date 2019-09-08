@@ -1,0 +1,7 @@
+- args:
+    name: entries
+    new_name: shift_entries
+    table:
+      name: shift_entry_types
+      schema: public
+  type: rename_relationship

@@ -1,0 +1,16 @@
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - id
+      - short
+      - name
+      - created_at
+      - updated_at
+      filter: {}
+      limit: null
+    role: anonymous
+    table:
+      name: incident_classifications
+      schema: public
+  type: create_select_permission

@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "public"."shift_unit" ADD COLUMN "joined_at" timestamptz NOT
+      NULL;
+  type: run_sql

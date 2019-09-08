@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "public"."shift_entries" ADD COLUMN "started_at" timestamptz
+      NULL;
+  type: run_sql

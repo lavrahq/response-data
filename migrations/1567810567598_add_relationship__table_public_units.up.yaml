@@ -1,0 +1,12 @@
+- args:
+    name: shift_entries_dispatched
+    table:
+      name: units
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: dispatcher_id
+        table:
+          name: shift_entries
+          schema: public
+  type: create_array_relationship

@@ -1,0 +1,15 @@
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - incident_id
+      - location_id
+      - incident_location_type_id
+      - comment
+      filter: {}
+      limit: null
+    role: anonymous
+    table:
+      name: incident_location
+      schema: public
+  type: create_select_permission

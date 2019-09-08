@@ -1,0 +1,41 @@
+- args:
+    role: anonymous
+    table:
+      name: incidents
+      schema: public
+  type: drop_select_permission
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - agency_id
+      - created_at
+      - disposition_id
+      - final_incident_type_id
+      - finished_at
+      - id
+      - incident_status_id
+      - incident_type_id
+      - is_public
+      - public
+      - updated_at
+      filter:
+        _and:
+        - status:
+            _and:
+            - cleared:
+                _eq: false
+            - holding:
+                _eq: false
+            - reassigned:
+                _eq: false
+        - is_public:
+            _eq: true
+        - disposition_id:
+            _is_null: true
+      limit: 25
+    role: anonymous
+    table:
+      name: incidents
+      schema: public
+  type: create_select_permission
